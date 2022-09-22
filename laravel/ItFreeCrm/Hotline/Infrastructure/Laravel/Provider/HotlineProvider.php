@@ -10,7 +10,7 @@ class HotlineProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->loadRoutesFrom(__DIR__ . '/../../../UI/Http/Routes/api.php');
+        //$this->loadRoutesFrom(__DIR__ . '/../../../UI/Http/Routes/api.php');
 
         $this->loadMigrationsFrom(__DIR__ . '/../../../Infrastructure/Laravel/Migrations');
 
