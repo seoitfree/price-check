@@ -149,7 +149,8 @@ class AddReportConsoleHandler extends RootHandler
         $fileNameAfter = 'report_hotline' . time() . '.csv';
 
         $csv = Writer::createFromPath(storage_path('app/docs/') . $fileNameAfter , 'w+');
-        $csv->insertOne(static::HEADER + array_keys(static::SHOPS));
+
+        $csv->insertOne(array_merge(static::HEADER, array_keys(static::SHOPS)));
 
         return $csv;
     }
@@ -161,7 +162,7 @@ class AddReportConsoleHandler extends RootHandler
     private function getReader($fileName): Reader
     {
         return Reader::createFromPath(storage_path('app/docs/') . $fileName, 'r');
-    }
+    }//php artisan report:add --url=https://hotline.ua/cabinet/37865/analytics/load-report/1909/?hash=af2e99e7bb69f0b83c98cab58055ef64
 
     /**
      * @param array $items
