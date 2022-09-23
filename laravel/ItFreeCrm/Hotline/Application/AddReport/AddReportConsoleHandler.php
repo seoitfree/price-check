@@ -30,7 +30,18 @@ class AddReportConsoleHandler extends RootHandler
         "Цитрус" => '',
         "Brain.Комп'ютери/гаджети" => '',
         "ALLO.ua" => '',
-        "Ельдорадо" => ''
+        "Ельдорадо" => '',
+        "DEX.UA" => '', 
+        "KELA" => '',
+        "GRANADO" => '',
+        "BS-partner.com.ua" => '', 
+        "BS-Market.com.ua" => '',
+        "VENCON.UA" => '',
+        "fiskars-official" => '',
+        "kenwood-shop.com.ua" => '',
+        "Polaris-shop.com.ua" => '',
+        "Philips Domestic Appliances" => '',
+        "Gastroshop" => ''
     ];
 
     private Console $console;
