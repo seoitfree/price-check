@@ -31,10 +31,10 @@ class AddReportConsoleHandler extends RootHandler
         "Brain.Комп'ютери/гаджети" => '',
         "ALLO.ua" => '',
         "Ельдорадо" => '',
-        "DEX.UA" => '', 
+        "DEX.UA" => '',
         "KELA" => '',
         "GRANADO" => '',
-        "BS-partner.com.ua" => '', 
+        "BS-partner.com.ua" => '',
         "BS-Market.com.ua" => '',
         "VENCON.UA" => '',
         "fiskars-official" => '',
@@ -139,9 +139,22 @@ class AddReportConsoleHandler extends RootHandler
         $bar->start();
         while ($iteratorRecords->valid()) {
             $record = $iteratorRecords->current();
-            $shopsPrice = $this->getData($record, new Crawler(file_get_contents($record[1])));
 
-            $csv->insertOne( $shopsPrice);
+            $contents = file_get_contents($record[1]);
+            $crawler = new Crawler($contents);
+
+            if (strripos($contents, 'class="captcha container') !== false) {
+                $this->console->newLine();
+                if ($this->console->confirm('Check captcha and continue. Do you wish to continue?', true)) {
+                    $shopsPrice = $this->getData($record, new Crawler(file_get_contents($record[1])));
+
+                    $csv->insertOne( $shopsPrice);
+                }
+            } else {
+                $shopsPrice = $this->getData($record, $crawler);
+
+                $csv->insertOne( $shopsPrice);
+            }
 
             sleep(3);
             $bar->advance();
