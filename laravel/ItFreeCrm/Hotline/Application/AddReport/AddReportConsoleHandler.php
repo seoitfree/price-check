@@ -23,25 +23,29 @@ class AddReportConsoleHandler extends RootHandler
 
     const SHOPS = [
         "COMFY.UA" => '',
-        "ФОКСТРОТ" => '',
         "Rozetka.ua" => '',
+        "DEX.UA" => '', 
+        "KELA" => '',
+        "GRANADO" => '',
+        "fiskars-official" => '',
+        "Gastroshop" => '',
+        "BS-partner.com.ua" => '', 
+        "BS-Market.com.ua" => '',
+        "VENCON.UA" => '',
+        "kenwood-shop.com.ua" => '',
+        "Polaris-shop.com.ua" => '',
+        "Philips Domestic Appliances" => '',
+        "MirCarAudio.com" => '',
+        "ФОКСТРОТ" => '',
         "MOYO" => '',
         "Епіцентр" => '',
         "Цитрус" => '',
         "Brain.Комп'ютери/гаджети" => '',
         "ALLO.ua" => '',
         "Ельдорадо" => '',
-        "DEX.UA" => '',
-        "KELA" => '',
-        "GRANADO" => '',
-        "BS-partner.com.ua" => '',
-        "BS-Market.com.ua" => '',
-        "VENCON.UA" => '',
-        "fiskars-official" => '',
-        "kenwood-shop.com.ua" => '',
-        "Polaris-shop.com.ua" => '',
-        "Philips Domestic Appliances" => '',
-        "Gastroshop" => ''
+        "F.ua „ТОЙ САМИЙ“ магазин" => '',
+        "е-Кошик" => '',
+        "АйТіФрі" => ''
     ];
 
     private Console $console;
